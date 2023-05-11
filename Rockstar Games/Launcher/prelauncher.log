@@ -1,0 +1,14 @@
+[2023-04-07 11:03:31.697] [DISPLAY] LauncherPatcher version: 1.0.0.14
+[2023-04-07 11:03:31.698] [DISPLAY] Launcher version: 1.0.0.14
+[2023-04-07 11:03:31.698] [DISPLAY] Retrieving Launcher manifest: "https://gamedownloads.rockstargames.com/public/prelauncher.ini"
+[2023-04-07 11:03:31.708] [DISPLAY] Retrieving minimum supported versions.
+[2023-04-07 11:03:32.035] [DISPLAY] Minimum LauncherPatcher version: 1.0.0.12
+[2023-04-07 11:03:32.083] [DISPLAY] Running Launcher from "C:\Program Files\Rockstar Games\Launcher\Launcher.exe"
+[2023-04-07 11:03:41.423] [DISPLAY] LauncherPatcher version: 1.0.0.14
+[2023-04-07 11:03:41.424] [DISPLAY] Launcher version: 1.0.0.14
+[2023-04-07 11:03:41.424] [DISPLAY] Launcher exited with code: 1
+[2023-04-07 11:03:41.424] [ ERROR ] Failed to run Launcher
+[2023-04-07 11:03:41.468] [ ERROR ] Displaying Error titled: Error
+[2023-04-07 11:03:41.468] [ ERROR ]  The Rockstar Games Launcher failed to initialize!
+Please visit https://support.rockstargames.com for more information.
+[2023-04-07 11:03:43.752] [DISPLAY] Shutting down.

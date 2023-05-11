@@ -1,0 +1,43 @@
+[2023-02-05 18:59:14.844] [DISPLAY] [Main ] [sysinfo] OS Version: Major: 10 Minor: 0 Build: 19045 Service Pack: 
+[2023-02-05 18:59:14.856] [DISPLAY] [Main ] [sysinfo] DX Version from SystemInfo: 
+[2023-02-05 18:59:14.856] [DISPLAY] [Main ] [sysinfo] DX Version from SystemInfo: 
+[2023-02-05 18:59:14.856] [DISPLAY] [Main ] [main] Working directory: C:\Program Files\Rockstar Games\Launcher
+[2023-02-05 18:59:14.873] [DISPLAY] [Main ] [minmode] Running in Steam mode
+[2023-02-05 18:59:14.873] [DISPLAY] [Main ] [minmode] Steam App Id: 271590
+[2023-02-05 18:59:14.873] [DISPLAY] [Main ] [minmode] Title Id: gta5
+[2023-02-05 18:59:14.873] [DISPLAY] [Main ] [minmode] Location: C:\Program Files (x86)\Steam\steamapps\common\Grand Theft Auto V
+[2023-02-05 18:59:14.873] [DISPLAY] [Main ] [launcher] Opening log file.
+[2023-02-05 18:59:14.878] [DISPLAY] [Main ] [main] Command line: "C:\Program Files\Rockstar Games\Launcher\Launcher.exe" -skipPatcherCheck -steamAppId=271590 @args.txt
+[2023-02-05 18:59:14.878] [DISPLAY] [Main ] [main] Build type: FMB
+[2023-02-05 18:59:14.878] [DISPLAY] [Main ] [main] Version: 1.0.67.1178
+[2023-02-05 18:59:14.878] [DISPLAY] [Main ] [main] Parameters:
+[2023-02-05 18:59:14.878] [DISPLAY] [Main ] [main]     C:\Program Files\Rockstar Games\Launcher\Launcher.exe
+[2023-02-05 18:59:14.878] [DISPLAY] [Main ] [main]     -skipPatcherCheck
+[2023-02-05 18:59:14.878] [DISPLAY] [Main ] [main]     -steamAppId=271590
+[2023-02-05 18:59:14.878] [DISPLAY] [Main ] [main]     @args.txt
+[2023-02-05 18:59:14.905] [DISPLAY] [Main ] [titlemanager] Installed titles:
+[2023-02-05 18:59:14.905] [DISPLAY] [Main ] [titlemanager]  Title                             Progress               Version              Location                                                    
+[2023-02-05 18:59:14.918] [DISPLAY] [Main ] [svc] Service version: 1.0.67.1178 (1.0.67.1178)
+[2023-02-05 18:59:15.072] [DISPLAY] [Main ] [fileutils] Version: 2.1.6.5 | 1.0.67.1178 | FFP
+[2023-02-05 18:59:15.095] [DISPLAY] [Workr] [selfupdate] Up-to-date.
+[2023-02-05 18:59:15.295] [DISPLAY] [Main ] [systemtray] System tray: enabled
+[2023-02-05 18:59:15.573] [DISPLAY] [bgsvc] [svc] Received response from service.
+[2023-02-05 18:59:15.593] [DISPLAY] [Workr] [idownloader] Starting download of 'https://gamedownloads-rockstargames-com.akamaized.net/public/launcher_online_config.xml'
+[2023-02-05 18:59:15.733] [DISPLAY] [Workr] [idownloader] Completed download of 'https://gamedownloads-rockstargames-com.akamaized.net/public/launcher_online_config.xml' (status: 0/200)
+[2023-02-05 18:59:15.733] [DISPLAY] [Workr] [titlemanager] Downloading title list...
+[2023-02-05 18:59:15.746] [DISPLAY] [Workr] [idownloader] Starting download of 'https://gamedownloads-rockstargames-com.akamaized.net/public/title_metadata.json'
+[2023-02-05 18:59:15.837] [DISPLAY] [Workr] [idownloader] Completed download of 'https://gamedownloads-rockstargames-com.akamaized.net/public/title_metadata.json' (status: 0/200)
+[2023-02-05 18:59:15.906] [DISPLAY] [Workr] [titlemanager] Downloading default title list (SCS)...
+[2023-02-05 18:59:15.906] [DISPLAY] [Workr] [idownloader] Starting download of 'https://rgl-prod.ros.rockstargames.com/launcher/11/LauncherServices/App.asmx/GetDefaultApps?accessToken='
+[2023-02-05 18:59:16.937] [DISPLAY] [Workr] [idownloader] Completed download of 'https://rgl-prod.ros.rockstargames.com/launcher/11/LauncherServices/App.asmx/GetDefaultApps?accessToken=' (status: 0/200)
+[2023-02-05 18:59:16.937] [DISPLAY] [Workr] [titlemanager] Title list updated.
+[2023-02-05 18:59:16.937] [DISPLAY] [Workr] [launcher] Checking for self-update...
+[2023-02-05 18:59:16.941] [DISPLAY] [Workr] [statuschecker] Title Rockstar Games Launcher: No update
+[2023-02-05 18:59:16.945] [DISPLAY] [Workr] [launcher] No self-update, continuing.
+[2023-02-05 18:59:16.945] [DISPLAY] [Workr] [launcher] Checking for prerequisite updates...
+[2023-02-05 18:59:16.952] [DISPLAY] [Workr] [preqmanager] The Social Club version available matches that currently installed (both: 2.1.6.5)
+[2023-02-05 18:59:16.952] [DISPLAY] [Workr] [titleupdater] No prerequisites to install.
+[2023-02-05 18:59:18.645] [DISPLAY] [Main ] [launcher] Shutdown requested: false, false
+[2023-02-05 18:59:18.662] [DISPLAY] [Main ] [launcher] StartShutdown - Now in progress
+[2023-02-05 18:59:18.793] [DISPLAY] [Main ] [launcher] Social club UI in fail state... requesting shutdown.
+[2023-02-05 18:59:18.828] [DISPLAY] [Main ] [app] Application quit requested (exit code: 0)
