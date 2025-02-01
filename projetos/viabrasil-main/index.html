@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Via Brasil Gestão de Pedágios</title>
+</head>
+
+<body>
+    <style>
+        /* Cor vermelha para os detalhes */
+
+        /* Cor vermelha para os botões */
+        button,
+        .button {
+            background-color: red;
+            color: white;
+            border: 2px solid red;
+        }
+
+        button:hover,
+        .button:hover {
+            background-color: darkred;
+        }
+
+        :root {
+            --main-color: #b91c1c;
+            --text-color: #333;
+            --bg-light: #f9f9f9;
+            --font-size: 1rem;
+            --border-radius: 10px;
+        }
+
+
+        .experience__container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .experience__row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .experience__row--reverse {
+            flex-direction: row-reverse;
+        }
+
+        .experience__text {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience__image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .experience__image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .experience__container {
+                padding: 20px;
+                /* Adiciona um pouco de espaçamento interno */
+            }
+
+            .experience__row {
+                flex-direction: column;
+                gap: 20px;
+                /* Menos espaçamento entre os itens */
+                text-align: center;
+                /* Centraliza os textos */
+            }
+
+            .experience__image img {
+                max-width: 100%;
+                /* Garante que a imagem ocupe toda a largura disponível */
+                height: auto;
+                /* Ajusta a altura da imagem proporcionalmente */
+            }
+
+            .experience__text {
+                padding: 15px;
+                /* Reduz o padding para melhor aproveitamento do espaço */
+            }
+
+            .experience__number {
+                font-size: 1.5rem;
+                /* Ajusta o tamanho do título para mobile */
+            }
+
+            .experience__description {
+                font-size: 1rem;
+                /* Ajusta o tamanho do texto da descrição */
+            }
+
+            .experience__description ul li {
+                font-size: 0.9rem;
+                /* Ajusta o tamanho da lista */
+            }
+        }
+
+
+        .experience__description ul {
+            list-style-type: none;
+            /* Remove os pontos padrões */
+            padding-left: 0;
+        }
+
+        .experience__description ul li {
+            position: relative;
+            /* Para poder posicionar o check */
+            padding-left: 25px;
+            /* Espaço para o check */
+            margin-bottom: 10px;
+            /* Espaço entre os itens */
+        }
+
+        .experience__description ul li::before {
+            content: '✔';
+            /* Carrega o check */
+            position: absolute;
+            left: 0;
+            /* Posiciona o check à esquerda */
+            color: rgb(202, 58, 58);
+            /* Cor do check */
+            font-size: 18px;
+            /* Tamanho do check */
+            top: 50%;
+            /* Centraliza verticalmente */
+            transform: translateY(-50%);
+        }
+
+
+        .services {
+            padding: 50px 10px;
+            background-color: var(--bg-light);
+        }
+
+        .section__title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .section__title::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--main-color);
+            margin: 10px auto;
+        }
+
+        .services__container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .services__card {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .services__card:hover {
+            transform: translateY(-5px);
+        }
+
+        .services__img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+        }
+
+        .services__title {
+            font-size: 1.5rem;
+            color: var(--main-color);
+            margin-bottom: 10px;
+        }
+
+        .services__description {
+            color: var(--text-color);
+            font-size: var(--font-size);
+        }
+
+        @media (max-width: 768px) {
+            .services__container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .experience__row {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .experience__row.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .advantages {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .section__title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .section__title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: rgb(28, 66, 102);
+            margin: 10px auto;
+        }
+
+        .advantages__container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .advantage {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .advantage:hover {
+            transform: translateY(-5px);
+        }
+
+        .advantage__icon {
+            font-size: 2rem;
+            color: rgb(202, 58, 58);
+            margin-bottom: 10px;
+        }
+
+        .advantage__title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .advantage__description {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll(".nav__link");
+
+            function changeActiveLink() {
+                let scrollY = window.scrollY;
+
+                sections.forEach((section) => {
+                    const sectionHeight = section.offsetHeight;
+                    const sectionTop = section.offsetTop - 50; // Ajuste para precisão
+                    const sectionId = section.getAttribute("id");
+
+                    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                        navLinks.forEach((link) => {
+                            link.classList.remove("active-link");
+                        });
+
+                        document
+                            .querySelector(`.nav__link[href="#${sectionId}"]`)
+                            .classList.add("active-link");
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", changeActiveLink);
+        });
+
+    </script>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <img src="assets/img/logo.png" alt="logo">
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">Início</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">Sobre</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#experience" class="nav__link">Porque a Via Brasil?</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#advantages" class="nav__link">Vantagens</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">Nossos números</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="login.html" class="nav__link">Login</a>
+                    </li>
+                </ul>
+                <i class="ri-close-line nav__close" id="nav-close"></i>
+            </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-function-line"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home" id="home">
+            <img style="border-radius: 10px;" src="https://cdn.pixabay.com/photo/2022/03/23/21/27/road-7087957_1280.jpg"
+                alt="" class="home__img">
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <span class="home__data-subtitle">Gestão Eficiente de Pedágios</span>
+                    <h1 class="home__data-title">Soluções para <br> auditoria e <b>controle <br> de faturas</b></h1>
+                    <a href="#experience" class="button">Saiba mais</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!--==================== SOBRE ====================-->
+        <br>
+        <br>
+        <br>
+        <section class="about section" id="about">
+            <div class="about__container container grid">
+                <div class="about__data">
+                    <h2 class="section__title about__title">Mais Informações <br> Sobre a Via Brasil</h2>
+                    <p class="about__description">Voltada ao controle e auditoria de faturas de pedágio e similares, a
+                        Via Brasil busca ser um parceiro de sua empresa, trazendo possibilidades de economia e melhorias
+                        nos processos.</p>
+                    <a href="#" class="button">Entre em Contato</a>
+                </div>
+                <div class="about__img">
+                    <div class="about__img-overlay">
+                        <img style="border-radius: 10px;"
+                            src="data:image/jpeg;base64,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"
+                            alt="" class="about__img-one">
+                    </div>
+                    <div class="about__img-overlay">
+                        <img style="  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); border-radius: 10px;"
+                            src="https://static.vecteezy.com/ti/vetor-gratis/p1/2927732-conceitos-de-grafico-de-crescimento-vetor.jpg"
+                            alt="" class="about__img-two">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!--==================== POR QUE A VIA BRASIL ====================-->
+        <br>
+        <br>
+        <br>
+        <section class="experience section" id="experience">
+            <h2 class="section__title">Por que a Via Brasil?</h2>
+
+            <div class="experience__container container">
+                <div class="experience__row">
+                    <div class="experience__text">
+                        <h2 class="experience__number">Gestão total das faturas e extratos</h2>
+                        <span class="experience__description">
+                            Possibilidade de importação de faturas de cobrança e extratos de créditos comprados e
+                            recebidos.
+                            <ul>
+                                <li>Visualizar resumo dos itens consumidos</li>
+                                <li>Reconhecer ofensores de utilização</li>
+                                <li>Identificar perdas de valores</li>
+                                <li>Outros</li>
+                            </ul>
+                        </span>
+                    </div>
+                    <div class="experience__image">
+                        <img src="assets/img/gestao.png" alt="Fatura 1">
+                    </div>
+                </div>
+
+                <div class="experience__row experience__row--reverse">
+                    <div class="experience__text">
+                        <h2 class="experience__number">Auditoria de faturas e extratos</h2>
+                        <span class="experience__description">
+                            Possibilidade de auditoria de faturas e extratos importados.
+                            <ul>
+                                <li>Passagens e cobranças duplicadas</li>
+                                <li>Tarifas como mensalidades, valores de pedágios e outros</li>
+                                <li>Valores não utilizados</li>
+                                <li>Diferenças de categorias</li>
+                            </ul>
+                        </span>
+                    </div>
+                    <div class="experience__image">
+                        <img src="assets/img/auditoria.png" alt="Fatura 2">
+                    </div>
+                </div>
+
+                <div class="experience__row">
+                    <div class="experience__text">
+                        <h2 class="experience__number">Controle de agregados</h2>
+                        <span class="experience__description">
+                            Importação de extratos de créditos pagos e recebidos.
+                            <ul>
+                                <li>Créditos comprados e não utilizados</li>
+                                <li>Créditos recebidos e cobrados em duplicidade</li>
+                                <li>Principais ofensores de agregados com consumo em quantidade e valor</li>
+                            </ul>
+                        </span>
+                    </div>
+                    <div class="experience__image">
+                        <img src="assets/img/controle.png" alt="Fatura 3">
+                    </div>
+                </div>
+
+                <div class="experience__row experience__row--reverse">
+                    <div class="experience__text">
+                        <h2 class="experience__number">Relatórios detalhados</h2>
+                        <span class="experience__description">
+                            Visualização das informações periódicas das faturas.
+                            <ul>
+                                <li>Relatórios por veículos</li>
+                                <li>Relatórios por categorias</li>
+                                <li>Relatórios por praças</li>
+                                <li>Outros</li>
+                            </ul>
+                        </span>
+                    </div>
+                    <div class="experience__image">
+                        <img src="assets/img/gastos.png" alt="Fatura 4">
+                    </div>
+                </div>
+
+                <div class="experience__row">
+                    <div class="experience__text">
+                        <h2 class="experience__number">Customizações e propostas personalizadas</h2>
+                        <span class="experience__description">
+                            Customizações na plataforma e prestação de serviços diversos relacionados à gestão,
+                            auditoria e melhorias.
+                            <ul>
+                                <li>Importação de manifestos oriundos de outros sistemas</li>
+                                <li>Serviço de gestão da fatura e solicitações de reembolso</li>
+                                <li>Consultoria para sugestão de melhorias na sua empresa</li>
+                            </ul>
+                        </span>
+                    </div>
+                    <div class="experience__image">
+                        <img src="assets/img/proposta.png" alt="Fatura 5">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const rows = document.querySelectorAll(".experience__row");
+
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add("visible");
+                            }
+                        });
+                    },
+                    { threshold: 0.2 } // Elemento deve estar 20% visível para ativar
+                );
+
+                rows.forEach((row) => observer.observe(row));
+            });
+        </script>
+
+
+        <!--==================== VANTAGENS ====================-->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <section class="advantages section" id="advantages">
+            <h2 class="section__title">Vantagens</h2>
+
+            <div class="advantages__container container">
+                <div class="advantage" data-sr>
+                    <i class="ri-file-list-3-line advantage__icon"></i>
+                    <h3 class="advantage__title">Auditoria de Faturas</h3>
+                    <p class="advantage__description">Análise e confronto das informações de faturas com outras fontes,
+                        como base de dados de tarifas, manifestos e extratos financeiros.</p>
+                </div>
+
+                <div class="advantage" data-sr>
+                    <i class="ri-time-line advantage__icon"></i>
+                    <h3 class="advantage__title">Histórico de Pagamentos</h3>
+                    <p class="advantage__description">Histórico de valores consumidos, créditos adquiridos e valores
+                        perdidos.</p>
+                </div>
+
+                <div class="advantage" data-sr>
+                    <i class="ri-archive-line advantage__icon"></i>
+                    <h3 class="advantage__title">Controle de Inventário</h3>
+                    <p class="advantage__description">Apontamento de categorias possíveis para cada veículo, plano
+                        contratado, veículos pertencentes à frota e desligados.</p>
+                </div>
+
+                <div class="advantage" data-sr>
+                    <i class="ri-money-dollar-box-line advantage__icon"></i>
+                    <h3 class="advantage__title">Recuperação de Valores Retroativos</h3>
+                    <p class="advantage__description">Importação e auditoria de passagens dentro do período legal para
+                        solicitar ressarcimento de valores cobrados indevidamente.</p>
+                </div>
+
+                <div class="advantage" data-sr>
+                    <i class="ri-bar-chart-line advantage__icon"></i>
+                    <h3 class="advantage__title">Ofensores de Utilização</h3>
+                    <p class="advantage__description">Principais itens que contribuem para o valor da fatura, em termos
+                        de valores e quantidade.</p>
+                </div>
+
+                <div class="advantage" data-sr>
+                    <i class="ri-file-search-line advantage__icon"></i>
+                    <h3 class="advantage__title">Leitura de Extratos Financeiros</h3>
+                    <p class="advantage__description">Leitura de extratos de créditos recebidos, provenientes dos usos
+                        de sua empresa como agregada a outra(s).</p>
+                </div>
+            </div>
+        </section>
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            ScrollReveal().reveal('[data-sr]', {
+                distance: '50px',
+                origin: 'bottom',
+                duration: 800,
+                delay: 200,
+                easing: 'ease-in-out',
+                interval: 200,
+                reset: false
+            });
+        </script>
+        <!--==================== PLACES ====================-->
+
+        <!--==================== SPONSORS ====================-->
+
+    </main>
+
+
+    <section class="numbers section" id="numbers">
+        <h2 class="section__title">Nossos Números</h2>
+        <div class="numbers__container container">
+            <div class="stat">
+                <h3 class="stat__number" data-target="5000000">0</h3>
+                <p class="stat__label">Faturas Auditadas</p>
+            </div>
+            <div class="stat">
+                <h3 class="stat__number" data-target="2000000">0</h3>
+                <p class="stat__label">Economia Gerada (R$)</p>
+            </div>
+            <div class="stat">
+                <h3 class="stat__number" data-target="150">0</h3>
+                <p class="stat__label">Clientes Atendidos</p>
+            </div>
+            <div class="stat">
+                <h3 class="stat__number" data-target="300">0</h3>
+                <p class="stat__label">Projetos Concluídos</p>
+            </div>
+            <div class="stat">
+                <h3 class="stat__number" data-target="10">0</h3>
+                <p class="stat__label">Anos de Experiência</p>
+            </div>
+            <div class="stat">
+                <h3 class="stat__number" data-target="20">0</h3>
+                <p class="stat__label">Estados Atendidos</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <style>
+        .numbers {
+            text-align: center;
+            padding: 4rem 2rem;
+            background-color: #ffffff;
+        }
+
+        .numbers__container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .stat {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .stat__number {
+            font-size: 2.2rem;
+            color: #c03b3b;
+        }
+
+        .stat__label {
+            font-size: 1rem;
+            color: #333;
+        }
+
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: #fff;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 2rem;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            background: #1ebf57;
+        }
+
+        @media (max-width: 768px) {
+            .stats__container {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .stat {
+                max-width: 100%;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const counters = document.querySelectorAll(".stat__number");
+            const speed = 200;
+
+            const formatNumber = (num) => {
+                return num.toLocaleString("pt-BR");
+            };
+
+            const startCount = () => {
+                counters.forEach(counter => {
+                    const updateCount = () => {
+                        const target = +counter.getAttribute("data-target");
+                        const count = +counter.innerText.replace(/\./g, ""); // Remove pontos para evitar erro
+
+                        const increment = target / speed;
+
+                        if (count < target) {
+                            counter.innerText = formatNumber(Math.ceil(count + increment));
+                            setTimeout(updateCount, 20);
+                        } else {
+                            counter.innerText = formatNumber(target);
+                        }
+                    };
+                    updateCount();
+                });
+            };
+
+            let started = false;
+            window.addEventListener("scroll", () => {
+                const section = document.querySelector(".numbers__container");
+                const sectionTop = section.offsetTop;
+                const windowHeight = window.innerHeight;
+
+                if (!started && window.scrollY + windowHeight > sectionTop) {
+                    startCount();
+                    started = true;
+                }
+            });
+        });
+
+
+    </script>
+
+
+
+
+
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer section">
+        <div class="footer__container container grid">
+            <div class="footer__content grid">
+                <div class="footer__data">
+                    <h3 class="footer__title">Empresa</h3>
+                    <p class="footer__description">Escolha o destino, nós proporcionamos a experiência.</p>
+                    <div>
+                        <a href="https://www.instagram.com/" target="_blank" class="footer__social">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer__data">
+                    <h3 class="footer__subtitle">Sobre</h3>
+                    <ul>
+                        <li class="footer__item"><a href="#about" class="footer__link">Sobre Nós</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="footer__data">
+                    <h3 class="footer__subtitle">E-mail</h3>
+                    <ul>
+                        <li class="footer__item"><a href="#" class="footer__link">contato@gestaoviabrasil.com.br</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__data">
+                    <h3 class="footer__subtitle">Telefone</h3>
+                    <ul>
+                        <li class="footer__item"><a href="#" class="footer__link">(47)3058-1188</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__rights">
+                <p class="footer__copy">&#169; 2025 Emanuel Tonis Florz Filho. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line scrollup__icon"></i>
+    </a>
+
+    <!--=============== SCROLL REVEAL===============-->
+    <script src="assets/js/scrollreveal.min.js"></script>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
